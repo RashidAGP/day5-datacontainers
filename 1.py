@@ -1,20 +1,23 @@
 import numpy as np
-from scipy import linalg
+from scipy.linalg import solve, lstsq
 a = np.array([[1,2,3],[4,5,6],[7,8,9]])
-'''
+
 b = np.array([1,2,3])
 x = []
-x = np.linalg.solve(a,b)
+# This does not work. I don't lnow why?!!!!!
+# x = np.linalg.lstsq(a,b) 
+x = np.linalg.lstsq(a,b)
 
 print(x)
-'''
-'''
-Create the 3D vecror for B
 
-B = np.random.randInt(0,100, size (3,3,3))
 
 '''
+B = np.random.randint(0,100, (3,3))
+print(B)
 
+result = lstsq(a,B)
+print(result)
+'''
 '''
 f = np.linalg.eigvals(a)
 print(f)
@@ -26,7 +29,7 @@ print(g)
 '''
 
 
-
+'''
 h = linalg.norm(a, np.inf)
 print(h)
 
@@ -39,3 +42,5 @@ print(h1)
 
 h2 = linalg.norm(a, 1)
 print(h2)
+
+'''
